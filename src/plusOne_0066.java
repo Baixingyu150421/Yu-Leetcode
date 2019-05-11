@@ -1,7 +1,7 @@
 import java.math.BigInteger;
 import java.util.Arrays;
 
-public class plusOne_66 {
+public class plusOne_0066 {
     public static void main(String[] args) {
       int [] nums = {9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,};
       int[] ints = plusOne2(nums);
