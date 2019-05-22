@@ -16,5 +16,17 @@ public class reverseList_0206 {
         current.next = pre;
         return revervse(current,next);
     }
+    //迭代法
+    public ListNode reverseList2(ListNode head) {
+        ListNode pre = null;
+        ListNode curr = head;
+        while(curr != null){
+            ListNode temp = curr.next;
+            curr.next = pre;
+            pre = curr;
+            curr = temp;
+        }
+        return pre;
+    }
 }
 
