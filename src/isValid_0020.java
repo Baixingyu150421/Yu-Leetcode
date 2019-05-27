@@ -2,10 +2,9 @@ import java.util.Stack;
 
 public class isValid_0020 {
     public static void main(String[] args) {
-        boolean valid = isValid("{[]}");
+        boolean valid = isValid("()");
         System.out.println(valid);
     }
-
     /**
      * 栈的应用  判断括号的有效性
      * @param s

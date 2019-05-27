@@ -4,6 +4,21 @@ import java.util.Stack;
  * 判断一个整数是否是回文数，用栈做的，时间复杂度，空间复杂度都不占优势
  */
 public class isPalindrome_0009 {
+
+    //法二： 双指针
+    public static boolean isPalindrome2(int x) {
+        String s = Integer.toString(x);
+        int start = 0 , end = s.length() - 1;
+        while (start < end){
+            if(s.charAt(start) != s.charAt(end)){
+                return false;
+            }
+            start++;
+            end --;
+        }
+        return true;
+    }
+
     public static boolean isPalindrome(int x) {
         char[] charArray = Integer.toString(x).toCharArray();
         if(charArray.length == 1) return true;
