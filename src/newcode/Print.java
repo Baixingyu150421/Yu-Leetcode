@@ -24,6 +24,7 @@ public class Print {
         Queue<TreeNode> treeNodes = new LinkedList<>();
         //先添加头结点
         treeNodes.add(pRoot);
+        //int i = 0;
         while (!treeNodes.isEmpty()) {
             int count = treeNodes.size();
             while (count > 0) {
