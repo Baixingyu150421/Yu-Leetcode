@@ -3,22 +3,21 @@ package newcode;
 import java.util.ArrayList;
 
 public class printMatrix {
+    ArrayList<Integer> list = new ArrayList<>();
     public ArrayList<Integer> printMatrix(int [][] matrix) {
         int tR = 0;
         int tC = 0;
         int dR = matrix.length - 1;
         int dC = matrix[0].length - 1;
-        ArrayList<Integer> list = null;
         while (tR <= dR && tC <= dC){
-            ArrayList<Integer> print = print(matrix, tR++, tC++, dR--, dC--);
-            list = print;
+            print(matrix, tR++, tC++, dR--, dC--);
         }
         return list;
     }
 
     public ArrayList<Integer> print(int [][] matrix,int tR ,int tC , int dR ,int dC){
         //只有一行
-        ArrayList<Integer> list = new ArrayList<>();
+
         if(tR == dR){
             while (tC <= dC){
                 list.add(matrix[tR][tC]);
@@ -27,7 +26,7 @@ public class printMatrix {
             return list;
         }
         //只有一列
-       else if(tC == dC){
+        else if(tC == dC){
             while (tR <= dR){
                 list.add(matrix[tR][tC]);
                 tR++;
@@ -38,12 +37,12 @@ public class printMatrix {
         else {
             int curC = tC;
             int curR = tR;
-            while (curC != tC ){
+            while (curC != dC ){
                 list.add(matrix[tR][curC]);
                 curC++;
             }
             while (curR != dR){
-                list.add(matrix[curR][tC]);
+                list.add(matrix[curR][dC]);
                 curR++;
             }
             while (curC != tC){
