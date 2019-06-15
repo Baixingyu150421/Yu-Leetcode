@@ -5,7 +5,7 @@ public class minPathSum_0064 {
                 {1,5,1},
                 {4,2,1}
         };
-        int i = minPathSum(grid);
+        int i = minPathSum2(grid);
         System.out.println(i);
     }
     //dp[i][j]代表从(0,0)走到(i,j)的最小路径和则
@@ -31,5 +31,22 @@ public class minPathSum_0064 {
             }
         }
         return dp[rows-1][cols-1];
+    }
+    //动态规划
+    public static int minPathSum2(int[][] grid) {
+        int [][] dp = new int[grid.length][grid[0].length];
+        dp[0][0] = grid[0][0];
+        for(int i = 1 ; i < dp[0].length ; i++){
+            dp[0][i] = dp[0][i - 1] + grid[0][i];
+        }
+        for(int j = 1 ; j < dp.length ; j++){
+            dp[j][0] = dp[j - 1][0] + grid[j][0];
+        }
+        for(int i = 1; i < dp.length ; i++){
+            for(int j = 1 ; j < dp[0].length ;j++ ){
+                dp[i][j] = Math.min(dp[i - 1][j],dp[i][j -1]) + grid[i][j];
+            }
+        }
+        return dp[grid.length - 1][grid[0].length - 1];
     }
 }
