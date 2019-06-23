@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class lengthOfLongestSubstring_ {
+public class lengthOfLongestSubstring_0003 {
     public static void main(String[] args) {
         int i = lengthOfLongestSubstring( "abcabcbb" );
         System.out.println(i);
@@ -17,6 +17,7 @@ public class lengthOfLongestSubstring_ {
                 left = Math.max(left,map.get(s.charAt(i)) + 1);
             }
             map.put(s.charAt(i),i);
+            //更新窗口最大值
             max = Math.max(max,i-left+1);
         }
         return max;
