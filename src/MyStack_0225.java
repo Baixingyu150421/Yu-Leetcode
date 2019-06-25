@@ -20,7 +20,7 @@ public class MyStack_0225 {
     public void push(int x) {
         //添加的时候添加到queue中
         queue.offer(x);
-        //始终保持队列头是最新添加的元素
+        //始终保持队列头是最新添加的元素,符合栈的先进后出
         while (!tempQueue.isEmpty()){
             queue.offer(tempQueue.poll());
         }

@@ -13,7 +13,7 @@ public class numIslands_0200 {
                     dfs(grid,i,j);
                 }
             }
-        }
+            }
         return count;
     }
     public static void dfs(char[][] grid , int i , int j){
