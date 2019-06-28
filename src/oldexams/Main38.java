@@ -10,7 +10,7 @@ public class Main38 {
         if(next.length() == 1) {System.out.println(51); return;}
         StringBuilder sb ;
         HashSet<String> set = new HashSet<>();
-        for(int i = 0 ; i < next.length() ; i++){
+        for(int i = 0 ; i <= next.length() ; i++){
             for(int j = 97 ; j <=122 ; j++  ){
                 sb = new StringBuilder();
                 String s1 = next.substring(0, i);
