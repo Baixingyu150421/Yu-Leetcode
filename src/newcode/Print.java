@@ -1,8 +1,6 @@
 package newcode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class Print {
      class TreeNode {
@@ -14,6 +12,33 @@ public class Print {
 
         }
     }
+    public ArrayList<ArrayList<Integer>> Print2(TreeNode pRoot) {
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(pRoot);
+        boolean reverse = false;
+        while (!queue.isEmpty()){
+            int count = queue.size();
+            ArrayList<Integer> list = new ArrayList<>();
+            while (count-- > 0){
+                TreeNode node = queue.poll();
+                if(node == null) continue;
+                list.add(node.val);
+                queue.add(node.left);
+                queue.add(node.right);
+            }
+            if (reverse){
+                Collections.reverse(list);
+            }
+            reverse = !reverse;
+            if(list.size() != 0){
+                result.add(list);
+            }
+        }
+        return result;
+    }
+
+
     //二叉树的层次遍历
     ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
 
